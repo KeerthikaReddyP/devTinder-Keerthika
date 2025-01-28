@@ -11,7 +11,7 @@ app.use("/hello",(req,res)=>{
 });
 
 app.use("/",(req,res)=>{
-    res.send("Hi thereeee...");
+    res.send("Hi thereee...");
 });
 
 app.listen(3000,()=>{
