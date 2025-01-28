@@ -1,5 +1,7 @@
 const express=require('express');
 
-const app=express(); //instance of express.js application (server)
+const app=express();
 
-app.listen(3000); // port number 3000
+app.listen(3000,()=>{
+    console.log("Server is successfully listening on port 3000...");
+});
