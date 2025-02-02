@@ -2,9 +2,9 @@ const express=require('express');
 
 const app=express();
 
-// Here you can as many "b"s as you want. a and c are must
-// works for /abc, /abbc, /abbbbbbbbc ...
-app.get("/ab+c", (req,res)=>{
+// ab (anything) cd
+// works for /abcd, /abefhsdcscd, /abanythingcd
+app.get("/ab*cd", (req,res)=>{
     res.send({firstname:"Keerthika",lastname:"Panchika"});
 });
 
