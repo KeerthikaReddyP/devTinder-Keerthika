@@ -2,19 +2,14 @@ const express=require('express');
 
 const app=express();
 
-// Keeping this route (/) on top of other
-// This will give the same response (Hi there..) for all the routes like /hello, /test, /xyz(which we didn't even define)
-app.use("/",(req,res)=>{
-    res.send("Hi thereee...");
+// This will match or handle only GET call to /user
+app.get("/user", (req,res)=>{
+    res.send({firstname:"Keerthika",lastname:"Panchika"});
 });
 
+// This will match all the HTTP methods
 app.use("/test",(req,res)=>{
     res.send("Hello from the server!");
-});
-// It'll give the same response for '/test' and '/test/anything'
-
-app.use("/hello",(req,res)=>{
-    res.send("Hello hello hello!");
 });
 
 app.listen(3000,()=>{
