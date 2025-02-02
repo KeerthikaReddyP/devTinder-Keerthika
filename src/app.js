@@ -2,9 +2,9 @@ const express=require('express');
 
 const app=express();
 
-// This will match for all the GET calls
-// with routes /user, /user/xyz, /user/anything, /user/1
-app.get("/abc", (req,res)=>{
+// Here, b is optional
+// works for /abc, /ac
+app.get("/ab?c", (req,res)=>{
     res.send({firstname:"Keerthika",lastname:"Panchika"});
 });
 
