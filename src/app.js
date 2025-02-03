@@ -9,6 +9,15 @@ app.use("/user",(req,res,next)=>{
 }, (req,res)=>{
     console.log("Handling the route user 2");
     res.send("Response-2");
+}, (req,res)=>{
+    console.log("Handling the route user 3");
+    res.send("Response-3");
+}, (req,res)=>{
+    console.log("Handling the route user 4");
+    res.send("Response-4");
+}, (req,res)=>{
+    console.log("Handling the route user 5");
+    res.send("Response-5");
 });
 // This will give "Response" (First route handler)
 
