@@ -3,9 +3,11 @@ const express=require('express');
 const app=express();
 
 app.use("/user",(req,res)=>{
-    // res.send("jhg");
-    //What if we dont send any response from the server?
-    // It just says sending request.. (like infinite loop)
+    console.log("Handling the route user");
+    res.send("Response");
+}, (req,res)=>{
+    console.log("Handling the route user 2");
+    res.send("Response-2");
 });
 
 app.listen(3000,()=>{
