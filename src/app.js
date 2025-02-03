@@ -4,7 +4,7 @@ const app=express();
 
 app.use("/user",(req,res,next)=>{
     console.log("Handling the route user");
-    // res.send("Response");
+    res.send("Response");
     next();
 }, (req,res)=>{
     console.log("Handling the route user 2");
@@ -18,6 +18,10 @@ app.use("/user",(req,res,next)=>{
 
 // How to go to 2nd route handler then??
 // next()
+
+// What if we keep res.send in first route handler?
+// It will give first response in postman.
+// But also an error in the console. Bcz, we've already sent a response to the client.
 
 app.listen(3000,()=>{
     console.log("Server is successfully listening on port 3000...");
