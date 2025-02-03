@@ -4,7 +4,7 @@ const app = express();
 
 app.use(
   "/user",
-  (req, res, next) => {
+  [(req, res, next) => {
     console.log("Handling the route user");
     res.send("Response");
     next();
@@ -24,7 +24,7 @@ app.use(
   (req, res) => {
     console.log("Handling the route user 5");
     res.send("Response-5");
-  }
+  }]
 );
 
 app.listen(3000, () => {
