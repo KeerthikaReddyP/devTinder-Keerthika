@@ -2,9 +2,10 @@ const express=require('express');
 
 const app=express();
 
-app.use("/user",(req,res)=>{
+app.use("/user",(req,res,next)=>{
     console.log("Handling the route user");
     // res.send("Response");
+    next();
 }, (req,res)=>{
     console.log("Handling the route user 2");
     res.send("Response-2");
@@ -14,6 +15,9 @@ app.use("/user",(req,res)=>{
 // But what if we comment res.send on first route handler?
 // Will it go to 2nd?
 // No. It will give nothing as response.
+
+// How to go to 2nd route handler then??
+// next()
 
 app.listen(3000,()=>{
     console.log("Server is successfully listening on port 3000...");
